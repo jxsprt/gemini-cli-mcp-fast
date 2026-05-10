@@ -73,8 +73,11 @@ fastmcp install cursor /path/to/gemini-mcp-server/server.py -e .
 
 Send any prompt to Gemini CLI non-interactively. Supports model selection and JSON output.
 
+**Safe by default** — uses `--approval-mode auto-edit` (auto-approves file edits, prompts for shell). Pass `dangerous=true` for full `yolo` mode.
+
 ```python
 gemini_prompt(prompt="Explain TCP handshake", model="gemini-2.5-flash")
+gemini_prompt(prompt="Refactor this module", dangerous=True)     # full auto-approval
 ```
 
 | Parameter | Type | Required | Default | Description |
@@ -82,6 +85,7 @@ gemini_prompt(prompt="Explain TCP handshake", model="gemini-2.5-flash")
 | `prompt` | string | ✅ | — | Prompt text (max ~100K chars) |
 | `model` | string | ❌ | CLI default | Model name (e.g., `gemini-3-flash-preview`) |
 | `output_format` | string | ❌ | `text` | `text`, `json`, or `stream-json` |
+| `dangerous` | bool | ❌ | `false` | Use `--approval-mode yolo` (auto-approves shell) |
 
 ### `gemini_plan`
 

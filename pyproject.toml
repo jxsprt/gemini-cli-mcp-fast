@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gemini-mcp-server"
+version = "1.0.0"
+description = "FastMCP server wrapping Google's Gemini CLI — use Gemini models from any MCP client"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Jaspreet Singh", email = "jaspreetsinghintp@gmail.com"},
+]
+keywords = ["mcp", "gemini", "fastmcp", "gemini-cli", "mcp-server"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+requires-python = ">=3.11"
+dependencies = [
+    "fastmcp>=3.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/jxsprt/gemini-mcp-server"
+Repository = "https://github.com/jxsprt/gemini-mcp-server"
+Issues = "https://github.com/jxsprt/gemini-mcp-server/issues"
+
+[project.scripts]
+gemini-mcp = "gemini_mcp_server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gemini_mcp_server"]
