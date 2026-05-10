@@ -29,6 +29,11 @@ dependencies = [
     "fastmcp>=3.0.0",
 ]
 
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
 [project.urls]
 Homepage = "https://github.com/jxsprt/gemini-mcp-server"
 Repository = "https://github.com/jxsprt/gemini-mcp-server"
