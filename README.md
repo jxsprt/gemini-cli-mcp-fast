@@ -1,7 +1,7 @@
 # Gemini CLI MCP Server
 
 [![CI](https://github.com/jxsprt/gemini-mcp-server/actions/workflows/ci.yml/badge.svg)](https://github.com/jxsprt/gemini-mcp-server/actions/workflows/ci.yml)
-[![PyPI](https://img.shields.io/badge/PyPI-pip%20install%20gemini--mcp--server-blue)](https://pypi.org/project/gemini-mcp-server/)
+[![PyPI](https://img.shields.io/badge/PyPI-pip%20install%20gemini--cli--fastmcp-blue)](https://pypi.org/project/gemini-cli-fastmcp/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![PR to Hermes Agent](https://img.shields.io/badge/PR-Hermes%20Agent-%23NouResearch?label=PR)](https://github.com/NousResearch/hermes-agent/pull/22878)
 
@@ -20,6 +20,15 @@ gemini                    # Run once to complete OAuth login
 ```
 
 ## Installation
+
+### Option 1: pip install
+
+```bash
+pip install gemini-cli-fastmcp
+gemini-mcp    # starts the MCP server
+```
+
+### Option 2: From source
 
 ```bash
 # Clone the repo
