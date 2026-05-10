@@ -1,5 +1,10 @@
 # Gemini CLI MCP Server
 
+[![CI](https://github.com/jxsprt/gemini-mcp-server/actions/workflows/ci.yml/badge.svg)](https://github.com/jxsprt/gemini-mcp-server/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/badge/PyPI-pip%20install%20gemini--mcp--server-blue)](https://pypi.org/project/gemini-mcp-server/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![PR to Hermes Agent](https://img.shields.io/badge/PR-Hermes%20Agent-%23NouResearch?label=PR)](https://github.com/NousResearch/hermes-agent/pull/22878)
+
 A lightweight [FastMCP](https://gofastmcp.com) server that wraps Google's [Gemini CLI](https://github.com/google-gemini/gemini-cli) as MCP tools. Works with any MCP client — Hermes Agent, Claude Code, Claude Desktop, Cursor, etc.
 
 ## Prerequisites
