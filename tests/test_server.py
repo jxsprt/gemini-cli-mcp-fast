@@ -59,7 +59,7 @@ def mock_subprocess_timeout():
 @pytest.fixture
 def mock_bin():
     """Ensure shutil.which finds a fake gemini binary."""
-    with patch("server.shutil.which", return_value="/usr/local/bin/gemini"):
+    with patch("gemini_mcp_server.server.shutil.which", return_value="/usr/local/bin/gemini"):
         yield
 
 
@@ -80,7 +80,7 @@ class TestGeminiVersion:
         assert "timed out" in result
 
     def test_binary_not_found(self):
-        with patch("server.shutil.which", return_value=None):
+        with patch("gemini_mcp_server.server.shutil.which", return_value=None):
             result = gemini_version()
             assert "Error" in result
             assert "not found" in result
@@ -164,7 +164,7 @@ class TestGeminiPlan:
         assert "gemini-2.5-pro" in args
 
     def test_include_directories(self, mock_subprocess, mock_bin):
-        with patch("server.os.getcwd", return_value="/home/user/project"):
+        with patch("gemini_mcp_server.server.os.getcwd", return_value="/home/user/project"):
             gemini_plan("Review", include_directories="src,tests")
             args = mock_subprocess.call_args[0][0]
             assert "--include-directories" in args
@@ -174,8 +174,8 @@ class TestGeminiPlan:
             assert "tests" in dirs
 
     def test_out_of_workspace_path_rejected(self, mock_subprocess, mock_bin):
-        with patch("server.os.getcwd", return_value="/home/user/project"):
-            with patch("server.logger.warning") as mock_log:
+        with patch("gemini_mcp_server.server.os.getcwd", return_value="/home/user/project"):
+            with patch("gemini_mcp_server.server.logger.warning") as mock_log:
                 gemini_plan("Review", include_directories="/etc")
                 args = mock_subprocess.call_args[0][0]
                 # /etc should NOT appear in the args
